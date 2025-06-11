@@ -17,15 +17,51 @@
     </div>
   </section>
 
+
   <section class="cart">
     <h2>Your Cart (0)</h2>
     <div class="content">
-      <div class="empty-cart-content">
+      <!-- <div class="empty-cart-content">
         <img src="images/illustration-empty-cart.svg" alt="empty cart svg">
         <p class="empty-cart-description">
           Your added items will appear here
         </p>
+      </div> -->
+
+      <div class="cart-card">
+        <div class="desert-info">
+          <p class="desert-name">
+            Classic Tiramisu
+          </p>
+          <div class="desert-details">
+            <p>1x</p>
+            <p>&#64; {{ 5.50 | currency:'USD':'symbol':'1.2-2'}}</p>
+            <p>{{ 5.50 | currency:'USD':'symbol':'1.2-2'}}</p>
+          </div>
+        </div>
+
+        <div class="remove-cart-item">
+          <!-- <img src="../../public/images/icon-remove-item.svg" class="remove-item" alt="remove item"> -->
+           x
+        </div>
       </div>
+
+      <hr/>
+
+      <div class="order-total">
+        <p>Order Total</p>
+
+        <h3>{{ 65 | currency:'USD':'symbol':'1.2-2'}}</h3>
+      </div>
+
+      <div class="carbon-neutral">
+        <p>This is a <span>carbon neutral</span> delivery</p>
+      </div>
+
+      <div class="add-to-cart-container">
+        <button><p>Confirm Order</p></button>
+      </div>
+
     </div>
   </section>
 </main>
