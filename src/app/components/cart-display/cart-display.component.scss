@@ -70,12 +70,14 @@
 
     .desert-info {
       @include flex(column, space-between, space-between);
-      width: 7.8rem;
+      // width: 7.8rem;
+      width: 70%;
       height: 3rem;
     }
 
     .desert-details {
       @include flex(row, space-between, center);
+      // background-color: green;    
 
 
       & p:nth-child(1) {

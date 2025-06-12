@@ -11,15 +11,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './cart-display.component.scss'
 })
 export class CartDisplayComponent implements OnInit {
-  // @Input() cartItemToAdd: DessertInterface
   cartService = inject( CartServiceService )
   LocalCartsArray: DessertInterface[] = []
 
 
-  constructor() {
-
-      // this.addItemToCart(this.cartItemToAdd! )
-  }
+  constructor() {  }
 
 
   ngOnInit(): void {
@@ -31,15 +27,9 @@ export class CartDisplayComponent implements OnInit {
   }
 
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   if(changes['cartItemToAdd'] && changes['cartItemToAdd'].currentValue) {
-  //     console.log("from carts display, cartItem to add is ", this.cartItemToAdd)
-  //     this.addItemToCart(this.cartItemToAdd! )
-  //   }
-  // }
-
-  addItemToCart( cartItem: DessertInterface ) {
-    this.cartService.addToCart( cartItem )
+  grandTotal(cartsArray: DessertInterface[]) {
+    return cartsArray.reduce((sum, item) => sum + item.total, 0 )
   }
+
 
 }

@@ -10,34 +10,41 @@ import { CartServiceService } from '../../services/cart-service.service';
 export class AddToCartComponent {
   isAddedToCart = false;
   quantity = 1;
-  cartService = inject( CartServiceService)
+  total = 1;
+  cartService = inject(CartServiceService)
 
-  // @Output() addToCartEvent = new EventEmitter<any>()
   @Input() itemToAdd!: DessertInterface
+
+  
+  calculateItemTotal() {
+    return this.quantity * this.itemToAdd.price;
+  }
 
 
   addToCart() {
-    // this.addToCartEvent.emit()
     this.isAddedToCart = true;
+    this.itemToAdd.quantity = this.quantity;
+    this.itemToAdd.total = this.calculateItemTotal();
     this.cartService.addToCart(this.itemToAdd)
 
   }
 
   decreaseProductItem() {
     if( this.quantity === 1 ) {
-      this.quantity = 1
       this.isAddedToCart = false;
     }
     else {
       this.quantity--;
+      this.itemToAdd.quantity = this.quantity;
+      this.itemToAdd.total = this.calculateItemTotal()
     }
-    // if (this.quantity < 1) {
-    //   this.isAddedToCart = false;
-    // }
   }
 
   increaseProductItem() {
     ++this.quantity;
+    this.itemToAdd.quantity = this.quantity;
+    this.itemToAdd.total = this.calculateItemTotal()
+    
   }
 
 };
