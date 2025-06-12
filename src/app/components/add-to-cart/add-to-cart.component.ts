@@ -24,10 +24,16 @@ export class AddToCartComponent {
   }
 
   decreaseProductItem() {
-    if (this.quantity < 1) {
+    if( this.quantity === 1 ) {
+      this.quantity = 1
       this.isAddedToCart = false;
     }
-    this.quantity--;
+    else {
+      this.quantity--;
+    }
+    // if (this.quantity < 1) {
+    //   this.isAddedToCart = false;
+    // }
   }
 
   increaseProductItem() {

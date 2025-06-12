@@ -121,10 +121,12 @@
 
     .carbon-neutral {
       margin-bottom: 4rem;
-      text-align: center;
+      // display: flex;
+      // justify-content: center;
+      // text-align: center;
       @include TextPreset4;
       color: $rose-900;
-
+      padding: 1rem 1.18rem;
 
 
       span {
@@ -132,6 +134,17 @@
         color: $rose-900;
       }
     }
+
+
+    .delete-cart-item {
+      cursor: pointer;
+
+      &:hover {
+        color: $rose-900;
+      }
+    }
+
+
 
 
 
