@@ -24,10 +24,8 @@ export class CartServiceService {
     let cartItemAlreadyExists = this.getCartItem( cartItem )
     if( cartItemAlreadyExists ) {
       // handle logic here later
-      console.log('item already exists in cart')
     }
     else {
-      console.log('cart item added in service')
       const currentCartItems = this.CartsArray.getValue();
       const updatedCartItems = [...currentCartItems, cartItem];
       this.CartsArray.next( updatedCartItems );
@@ -36,7 +34,6 @@ export class CartServiceService {
 
 
   deleteCartItem( cartItem: DessertInterface ) {
-    console.log('delete cart item run');
     const currentCartItems = this.CartsArray.getValue()
     const updatedCartItems = currentCartItems.filter(( cart ) => cart.name !== cartItem.name )
     this.CartsArray.next( updatedCartItems )

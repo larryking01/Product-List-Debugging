@@ -17,6 +17,8 @@ export class AppComponent implements OnInit {
   Desserts:DessertInterface[] | null = null;
   cartItem: DessertInterface | null = null;
 
+  modalActive = false;
+
 
   productService = inject( ProductsServiceService )
 
@@ -26,7 +28,6 @@ export class AppComponent implements OnInit {
     this.productService.AllDessertsArray$.subscribe({
       next: ( data ) => {
         this.Desserts = data;
-        console.log('all deserts on startup = ', this.Desserts)
       }
     })
   }
@@ -34,7 +35,10 @@ export class AppComponent implements OnInit {
 
   handleAddToCart(dessert: DessertInterface) {
     this.cartItem = dessert;
-    console.log('selected dessert = ', this.cartItem)
+  }
+
+  handleModalActive( modalStatus: boolean ) {
+    this.modalActive = modalStatus;
   }
 
 

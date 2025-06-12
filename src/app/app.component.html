@@ -1,4 +1,4 @@
-<main>
+<main [ngClass]="{'blur': modalActive}">
   <section class="desserts">
     <h1>Desserts</h1>
 
@@ -17,7 +17,7 @@
     </div>
   </section>
 
-  <app-cart-display></app-cart-display>
+  <app-cart-display (modalActive)="handleModalActive($event)"></app-cart-display>
 
 
 </main>
