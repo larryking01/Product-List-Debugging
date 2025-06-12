@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 import { CartServiceService } from '../../services/cart-service.service';
 import { DessertInterface } from '../../../shared/models';
@@ -14,6 +14,11 @@ export class CartDisplayComponent implements OnInit {
   cartService = inject( CartServiceService )
   LocalCartsArray: DessertInterface[] = []
 
+  showModal = false;
+
+  @Output() modalActive = new EventEmitter<boolean>(false)
+
+
 
   constructor() {  }
 
@@ -23,9 +28,18 @@ export class CartDisplayComponent implements OnInit {
       next: ( data ) => this.LocalCartsArray = data
     })
 
-    console.log("local carts array = ", this.LocalCartsArray)
   }
 
+
+  openModal() {
+    this.showModal = true
+    this.modalActive.emit(true)
+  }
+
+  closeModal() {
+    this.showModal = false
+    this.modalActive.emit(false)
+  }
 
   grandTotal(cartsArray: DessertInterface[]) {
     return cartsArray.reduce((sum, item) => sum + item.total, 0 )
