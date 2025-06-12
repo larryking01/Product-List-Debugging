@@ -1,13 +1,20 @@
 # Bugs Report And Fixes.
 
 # Bug 1. 
-* App component class decorator was terminated with a comma and it was also not wrapped right on top of class
+* App component class decorator was terminated with a colon and it was also not wrapped right on top of class
 
 * Same bug as above in Add to cart component class
+
+* My Fix:
+Removed the colon from the decorator as well as any code between the decorator and the class definition.
+
 
 
 # Bug 2.
 * Add to cart component was being rendered inside the App Component but it was not added to the imports array.
+
+* My Fix:
+I added the required import into the imports array.
 
 
 # Bug 3.
@@ -26,4 +33,4 @@ decreaseProductItem() {
   }
 }
 
-
+This prevents quantity from dropping below 1 and updates the isAddedToCart flag as needed.
