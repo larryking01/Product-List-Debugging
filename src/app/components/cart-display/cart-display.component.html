@@ -11,23 +11,23 @@
       <div class="cart-present" *ngIf="LocalCartsArray.length > 0">
         <div *ngFor="let cartItem of LocalCartsArray; index as ii">
             <div class="cart-card">
-                <div class="desert-info">
+              <div class="desert-info">
                 <p class="desert-name">
                    {{ cartItem.name }}
                 </p>
                 <div class="desert-details">
-                    <p>1x</p>
+                    <p>{{ cartItem.quantity}}x</p>
                     <p>&#64; {{ cartItem.price| currency:'USD':'symbol':'1.2-2'}}</p>
-                    <p>{{ cartItem.price| currency:'USD':'symbol':'1.2-2'}}</p>
+                    <p>{{ cartItem.total | currency:'USD':'symbol':'1.2-2'}}</p>
                 </div>
-                </div>
+              </div>
 
-                <div class="remove-cart-item" (click)="cartService.deleteCartItem( cartItem )">
+              <div class="remove-cart-item" (click)="cartService.deleteCartItem( cartItem )">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="delete-cart-item">
                     <path d="M10 1.25C5.125 1.25 1.25 5.125 1.25 10C1.25 14.875 5.125 18.75 10 18.75C14.875 18.75 18.75 14.875 18.75 10C18.75 5.125 14.875 1.25 10 1.25ZM10 17.5C5.875 17.5 2.5 14.125 2.5 10C2.5 5.875 5.875 2.5 10 2.5C14.125 2.5 17.5 5.875 17.5 10C17.5 14.125 14.125 17.5 10 17.5Z" fill="#AD8A85"/>
                     <path d="M13.375 14.375L10 11L6.625 14.375L5.625 13.375L9 10L5.625 6.625L6.625 5.625L10 9L13.375 5.625L14.375 6.625L11 10L14.375 13.375L13.375 14.375Z" fill="#AD8A85"/>
                   </svg>
-                </div>
+              </div>
             </div>
             <hr/>
         </div>
@@ -36,7 +36,7 @@
         <div class="order-total">
             <p>Order Total</p>
 
-            <h3>{{ 65 | currency:'USD':'symbol':'1.2-2'}}</h3>
+            <h3>{{ grandTotal(LocalCartsArray) | currency:'USD':'symbol':'1.2-2'}}</h3>
         </div>
 
         <div class="carbon-neutral">
