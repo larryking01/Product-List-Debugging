@@ -73,3 +73,11 @@ main {
 
 
 
+
+/* responsive rules */
+@media (max-width: 1060px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+}

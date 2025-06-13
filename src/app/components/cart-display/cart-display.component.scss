@@ -270,3 +270,20 @@
   }
 }
 
+
+
+
+
+@media (max-width:1060px) {
+  .cart {
+    width: 95%;
+  }
+
+  .modal-display {
+    position: fixed;
+    top:15%;
+    left: 15%;
+    // background-color: red;
+  }
+
+}
