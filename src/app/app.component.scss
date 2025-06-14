@@ -39,11 +39,14 @@ main {
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
+  // background-color: yellow;
 
   .dessert-item {
     @include flex(column, flex-start, stretch, 2rem);
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
     height: fit-content;
+
 
     .item-image-add-to-cart {
       @include flex(column);
@@ -76,15 +79,69 @@ main {
 
 
 /* responsive rules */
-@media (max-width: 1060px) {
+@media (min-width: 679px) and (max-width: 1060px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dessert-item {
+    @include flex(column, flex-start, stretch, 2rem);
+    flex: 1 1 200px; // flex-grow: 1, flex-shrink: 1, flex-basis: 200px
+    width: 100%;
+    max-width: 250px;
+    min-width: 150px;
+    height: fit-content;
+    // background-color: red;
+
+    .item-image-add-to-cart {
+      @include flex(column);
+
+      img {
+        aspect-ratio: 1;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+    }
+
+  }
+}
+
+
+
+
+@media (max-width: 678px) {
   main {
     display: flex;
     flex-direction: column;
   }
 
   .desserts-container {
-
+    flex-direction: column;
   }
 
+  .dessert-item {
+    @include flex(column, flex-start, stretch, 2rem);
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    flex: 1 1 200px; // flex-grow: 1, flex-shrink: 1, flex-basis: 200px
+    height: fit-content;
+    // background-color: red;
 
+    .item-image-add-to-cart {
+      @include flex(column);
+
+      img {
+        aspect-ratio: 1;
+        border-radius: 10px;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+  }
 }
+
+
+
