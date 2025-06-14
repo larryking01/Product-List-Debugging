@@ -6,8 +6,8 @@
           <div class="dessert-item" *ngFor="let dessertItem of Desserts; index as ii">
             <section class="item-image-add-to-cart">
                <picture>
-                  <source [attr.srcset]="dessertItem.image.mobile" media="(max-width: 599px)" />
-                  <source [attr.srcset]="dessertItem.image.tablet" media="(min-width: 600px) and (max-width: 1023px)" />
+                  <source [attr.srcset]="dessertItem.image.mobile" media="(max-width: 678px)" />
+                  <source [attr.srcset]="dessertItem.image.tablet" media="(min-width: 679px) and (max-width: 1023px)" />
                   <source [attr.srcset]="dessertItem.image.desktop" media="(min-width: 1024px)" />
 
                   <img [src]="dessertItem.image.desktop" [alt]="dessertItem.name" />
