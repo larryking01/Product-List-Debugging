@@ -56,7 +56,7 @@
 
 
      <article [ngClass]="{'show-modal': showModal, 'hide-modal': !showModal}" (click)="closeModal()">
-      <div class="modal-display">
+      <div class="modal-display" (click)="stopEventPropagation($event)">
         <section class="modal-item-content">
         <div class="header-icons-div">
           <svg width="35" height="35" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +70,7 @@
               <path d="M13.375 14.375L10 11L6.625 14.375L5.625 13.375L9 10L5.625 6.625L6.625 5.625L10 9L13.375 5.625L14.375 6.625L11 10L14.375 13.375L13.375 14.375Z" fill="#AD8A85"/>
             </svg>
           </div> -->
-          
+
         </div>
 
         <div class="order-confirmed">

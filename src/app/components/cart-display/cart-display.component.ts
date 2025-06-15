@@ -39,6 +39,10 @@ export class CartDisplayComponent implements OnInit {
     this.showModal = false
   }
 
+  stopEventPropagation(event: Event) {
+    event.stopPropagation()
+  }
+
   grandTotal(cartsArray: DessertInterface[]) {
     return cartsArray.reduce((sum, item) => sum + item.total, 0 )
   }

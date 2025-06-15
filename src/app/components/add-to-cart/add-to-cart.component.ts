@@ -11,6 +11,7 @@ export class AddToCartComponent {
   isAddedToCart = false;
   quantity = 1;
   total = 1;
+  
   cartService = inject(CartServiceService)
 
   @Input() itemToAdd!: DessertInterface
