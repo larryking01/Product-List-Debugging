@@ -17,9 +17,6 @@ export class AppComponent implements OnInit {
   Desserts:DessertInterface[] | null = null;
   cartItem: DessertInterface | null = null;
 
-  modalActive = false;
-
-
   productService = inject( ProductsServiceService )
 
   constructor() { };
@@ -36,12 +33,6 @@ export class AppComponent implements OnInit {
   handleAddToCart(dessert: DessertInterface) {
     this.cartItem = dessert;
   }
-
-  handleModalActive( modalStatus: boolean ) {
-    this.modalActive = modalStatus;
-  }
-
-
 
 
 

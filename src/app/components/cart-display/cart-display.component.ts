@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 import { CartServiceService } from '../../services/cart-service.service';
 import { DessertInterface } from '../../../shared/models';
@@ -16,7 +16,7 @@ export class CartDisplayComponent implements OnInit {
 
   showModal = false;
 
-  @Output() modalActive = new EventEmitter<boolean>(false)
+  // @Output() modalActive = new EventEmitter<boolean>(false)
 
 
 
@@ -33,12 +33,10 @@ export class CartDisplayComponent implements OnInit {
 
   openModal() {
     this.showModal = true
-    this.modalActive.emit(true)
   }
 
   closeModal() {
     this.showModal = false
-    this.modalActive.emit(false)
   }
 
   grandTotal(cartsArray: DessertInterface[]) {
