@@ -14,12 +14,10 @@ main {
 }
 
 
-.blur {
-  background-color: rgba(0, 0, 0, 0.1);
-  pointer-events: none;
-  // position: fixed;
-  // inset: 0
-}
+// .blur {
+//   background-color: rgba(0, 0, 0, 0.1);
+//   pointer-events: none;
+// }
 
 .desserts {
   @include flex(column, flex-start, stretch, 2rem);
